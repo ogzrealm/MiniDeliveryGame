@@ -14,9 +14,11 @@ public class CarControlScript : MonoBehaviour
     private IEnumerator dumpRoutine;
     private IEnumerator boostedRoutine;
     private Rigidbody2D _rb;
+    private SpawnScript _spawnScript;
 
     private void Start()
     {
+        _spawnScript=FindAnyObjectByType(typeof(SpawnScript)) as SpawnScript;
         _rb = GetComponent<Rigidbody2D>();
         originalSpeed  = moveSpeed;
     }
@@ -58,6 +60,7 @@ public class CarControlScript : MonoBehaviour
             }
             boostedRoutine = Boosted();
             StartCoroutine(boostedRoutine);
+            Destroy(other.gameObject);
         }
     }
 
@@ -82,7 +85,8 @@ public class CarControlScript : MonoBehaviour
         isBoosted = true;
         
         yield return new WaitForSeconds(2f);
-
+        
+        _spawnScript.RandomSpawn();
         isBoosted = false;
         moveSpeed = originalSpeed;
         boostedRoutine = null;

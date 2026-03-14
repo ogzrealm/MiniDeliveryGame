@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 491625279716040916}
   - component: {fileID: 2300043047495377565}
   - component: {fileID: 4361045623153985959}
+  - component: {fileID: 3795504568287700151}
   m_Layer: 0
   m_Name: SpeedBoostItem
   m_TagString: PickupBoost
@@ -129,3 +130,15 @@ CapsuleCollider2D:
   m_Offset: {x: -0.014580727, y: 0.12193918}
   m_Size: {x: 0.7822647, y: 1.0635777}
   m_Direction: 0
+--- !u!114 &3795504568287700151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485346360476288665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acde415604e209946883a39985466a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpeedBoostScript
