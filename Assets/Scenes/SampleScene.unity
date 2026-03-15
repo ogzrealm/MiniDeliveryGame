@@ -6341,7 +6341,7 @@ GameObject:
   - component: {fileID: 220875130}
   - component: {fileID: 220875131}
   m_Layer: 0
-  m_Name: SpawnPoints
+  m_Name: Boosters
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33499,9 +33499,10 @@ GameObject:
   - component: {fileID: 1425161017}
   - component: {fileID: 1425161018}
   - component: {fileID: 1425161014}
+  - component: {fileID: 1425161019}
   m_Layer: 0
-  m_Name: Car
-  m_TagString: Untagged
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33530,7 +33531,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 0}
-  m_LocalScale: {x: 1.15, y: 1.15, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1773773934}
@@ -33609,6 +33610,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1425161019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425161013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a4b56ceabf3044094f72fd8d2281fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InvertoryScript
+  maxTrash: 0
+  currentTrash: 0
 --- !u!1 &1433312408
 GameObject:
   m_ObjectHideFlags: 0
