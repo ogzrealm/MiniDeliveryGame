@@ -14,11 +14,11 @@ public class CarControlScript : MonoBehaviour
     private IEnumerator dumpRoutine;
     private IEnumerator boostedRoutine;
     private Rigidbody2D _rb;
-    private SpawnScript _spawnScript;
+    private BoosterSpawnScript _spawnScript;
 
     private void Start()
     {
-        _spawnScript=FindAnyObjectByType(typeof(SpawnScript)) as SpawnScript;
+        _spawnScript=FindAnyObjectByType(typeof(BoosterSpawnScript)) as BoosterSpawnScript;
         _rb = GetComponent<Rigidbody2D>();
         originalSpeed  = moveSpeed;
     }

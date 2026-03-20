@@ -1,6 +1,5 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class SpeedBoostScript : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class SpeedBoostScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         RandomRotation();
     }

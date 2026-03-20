@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class InvertoryScript : MonoBehaviour
+public class InventoryScript : MonoBehaviour
 {
-    [SerializeField] private int maxTrash = 5;
+    private int _maxTrash = 5;
     [SerializeField] private int currentTrash;
-    public void addInvertory()
+    public void addInventory()
     {
-        if (currentTrash <= maxTrash)
+        if (currentTrash <= _maxTrash)
         {
             currentTrash++;
             Debug.Log(currentTrash);
