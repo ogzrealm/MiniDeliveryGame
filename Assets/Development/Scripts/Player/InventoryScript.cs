@@ -7,6 +7,13 @@ public class InventoryScript : MonoBehaviour
     [HideInInspector] public bool isFullCapasity = false;
     [SerializeField] private int currentTrash;
     [SerializeField] private int score;
+    private UIManagerScript uiManager;
+
+    private void Start()
+    {
+        uiManager=FindObjectOfType<UIManagerScript>();
+    }
+
     public void addInventory()
     {
         if (currentTrash == _maxTrash)
@@ -39,5 +46,6 @@ public class InventoryScript : MonoBehaviour
     private void addScore()
     {
         score += currentTrash * 10;
+        uiManager.addtoTxtScore(score);
     }
 }

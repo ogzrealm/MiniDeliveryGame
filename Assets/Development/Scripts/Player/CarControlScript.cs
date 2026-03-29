@@ -15,25 +15,29 @@ public class CarControlScript : MonoBehaviour
     private IEnumerator boostedRoutine;
     private Rigidbody2D _rb;
     private BoosterSpawnScript _spawnScript;
+    private AudioSource _engineSource;
 
     private void Start()
     {
         _spawnScript=FindAnyObjectByType(typeof(BoosterSpawnScript)) as BoosterSpawnScript;
         _rb = GetComponent<Rigidbody2D>();
         originalSpeed  = moveSpeed;
+        _engineSource= GetComponent<AudioSource>();
+        
     }
 
     public void Moving(float moveValue)
     {
         Vector3 direction = Vector3.up * moveValue;
         transform.Translate(direction * moveSpeed * Time.deltaTime);
+        _engineSource.pitch = 1f + 0.01f * moveSpeed;
+        
     }
 
     public void Turning(float turnValue)
     {
         var turn = turnValue * turnSpeed;
         transform.Rotate(0,0,turn*Time.deltaTime);
-        
         
     }
 

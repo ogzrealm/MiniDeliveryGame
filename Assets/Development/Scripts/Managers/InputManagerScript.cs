@@ -25,6 +25,11 @@ public class InputManagerScript : MonoBehaviour
         {
             car.Turning(-1);
         }
+
+        if (Keyboard.current.rKey.isPressed)
+        {
+            GameManagerScript.Instance.restartGame();
+        }
         
     }
 }
