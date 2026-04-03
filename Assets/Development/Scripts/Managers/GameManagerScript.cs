@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    [SerializeField] private float time = 60f;
+    public float time = 60f;
     private UIManagerScript uiManager;
     public static GameManagerScript Instance;
 

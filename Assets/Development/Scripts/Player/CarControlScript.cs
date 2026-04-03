@@ -17,10 +17,12 @@ public class CarControlScript : MonoBehaviour
     private BoosterSpawnScript _spawnScript;
     private AudioSource _engineSource;
     private float _enginePitch;
+    private ClockSpawnScript _clockScript;
 
     private void Start()
     {
         _spawnScript=FindAnyObjectByType(typeof(BoosterSpawnScript)) as BoosterSpawnScript;
+        _clockScript=FindAnyObjectByType(typeof(ClockSpawnScript)) as ClockSpawnScript;
         _rb = GetComponent<Rigidbody2D>();
         originalSpeed  = moveSpeed;
         _engineSource= GetComponent<AudioSource>();
@@ -67,6 +69,14 @@ public class CarControlScript : MonoBehaviour
             boostedRoutine = Boosted();
             StartCoroutine(boostedRoutine);
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("ClockTag"))
+        {
+            Debug.Log("Triggered with clock");
+            GameManagerScript.Instance.time += 10;
+            Destroy(other.gameObject);
+            _clockScript.RandomClockRandomSpawn();
         }
     }
 

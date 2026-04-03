@@ -7,6 +7,7 @@ TagManager:
   - DumpTag
   - PickupBoost
   - StationTag
+  - ClockTag
   layers:
   - Default
   - TransparentFX
