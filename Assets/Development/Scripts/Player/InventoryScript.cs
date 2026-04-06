@@ -19,6 +19,7 @@ public class InventoryScript : MonoBehaviour
         if (currentTrash == _maxTrash)
         {
             isFullCapasity = true;
+            uiManager.capacityWarning();
         }
         else if (currentTrash < _maxTrash && !isFullCapasity)
         {
@@ -38,6 +39,7 @@ public class InventoryScript : MonoBehaviour
                 addScore();
                 Debug.Log("Delivered Trash: " + currentTrash);
                 currentTrash = 0;
+                uiManager.silencecapacityWarning();
                 isFullCapasity = false;
             }
             

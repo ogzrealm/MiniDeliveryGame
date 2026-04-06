@@ -73,10 +73,10 @@ public class CarControlScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("ClockTag"))
         {
-            Debug.Log("Triggered with clock");
             GameManagerScript.Instance.time += 10;
             Destroy(other.gameObject);
             _clockScript.RandomClockRandomSpawn();
+            AudioManagerScript.instance.GetClock();
         }
     }
 
@@ -112,5 +112,6 @@ public class CarControlScript : MonoBehaviour
     {
         _engineSource.pitch = _enginePitch;
     }
+    
     
 }

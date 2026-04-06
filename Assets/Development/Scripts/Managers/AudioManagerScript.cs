@@ -40,8 +40,11 @@ public class AudioManagerScript : MonoBehaviour
         {
             _audioSource.PlayOneShot(_audioClips[2]);
         }
-        
-        
+    }
+
+    public void GetClock()
+    {
+        _audioSource.PlayOneShot(_audioClips[3]);
     }
     
 }
