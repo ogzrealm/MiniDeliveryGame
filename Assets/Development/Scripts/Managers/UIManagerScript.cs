@@ -25,9 +25,9 @@ public class UIManagerScript : MonoBehaviour
     private IEnumerator scoreTextAnimation()
     {
         Vector3 originalScale = scoreTxtScale.localScale;
-        scoreTxtScale.localScale = originalScale * 1.2f;
+        scoreTxtScale.localScale = originalScale * 1.15f;
         
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
         
         scoreTxtScale.localScale = originalScale;
 
