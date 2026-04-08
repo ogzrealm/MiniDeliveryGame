@@ -27737,6 +27737,7 @@ MonoBehaviour:
   timeText: {fileID: 1673210201}
   warningText: {fileID: 188743675}
   scoreTxtScale: {fileID: 1006925397}
+  timeTxtScale: {fileID: 1673210200}
 --- !u!1 &1150038290
 GameObject:
   m_ObjectHideFlags: 0

@@ -77,6 +77,7 @@ public class CarControlScript : MonoBehaviour
             Destroy(other.gameObject);
             _clockScript.RandomClockRandomSpawn();
             AudioManagerScript.instance.GetClock();
+            UIManagerScript.instance.timeAnimation();
         }
     }
 
