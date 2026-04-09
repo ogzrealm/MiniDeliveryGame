@@ -21,7 +21,9 @@ public class InventoryScript : MonoBehaviour
         {
             isFullCapasity = true;
             uiManager.capacityWarning();
+            uiManager.StationDropText();
             AudioManagerScript.instance.CapacityWarningSound(true);
+            
             return;
         }
         
@@ -42,6 +44,7 @@ public class InventoryScript : MonoBehaviour
                 Debug.Log("Delivered Trash: " + currentTrash);
                 currentTrash = 0;
                 uiManager.silencecapacityWarning();
+                uiManager.StationDropTextFalse();
                 AudioManagerScript.instance.CapacityWarningSound(false);
                 isFullCapasity = false;
                 

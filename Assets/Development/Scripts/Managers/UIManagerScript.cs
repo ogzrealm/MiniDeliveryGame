@@ -10,8 +10,10 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI warningText;
     private IEnumerator warningCoroutine;
+    private IEnumerator dropHereCoroutine;
     [SerializeField] private RectTransform scoreTxtScale, timeTxtScale;
     public static UIManagerScript instance;
+    [SerializeField] private TextMeshProUGUI dropHereText;
     
 
     private void Awake()
@@ -93,6 +95,37 @@ public class UIManagerScript : MonoBehaviour
             StopCoroutine(warningCoroutine); 
             warningCoroutine = null;
             warningText.gameObject.SetActive(false);
+        }
+    }
+
+    public void StationDropText()
+    {
+        if (dropHereCoroutine == null)
+        {
+            dropHereCoroutine = dropHereAnimation();
+            StartCoroutine(dropHereCoroutine);
+        }
+    }
+
+    public void StationDropTextFalse()
+    {
+        if (dropHereCoroutine != null)
+        {
+            StopCoroutine(dropHereCoroutine); 
+            dropHereCoroutine = null;
+            dropHereText.gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator dropHereAnimation()
+    {
+        dropHereText.gameObject.SetActive(true);
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            dropHereText.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.6f);
+            dropHereText.gameObject.SetActive(true); 
         }
     }
 }
