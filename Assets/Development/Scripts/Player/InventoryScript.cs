@@ -9,11 +9,13 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] private int score;
     private UIManagerScript uiManager;
     private TrashHoleScript TrashHoleScript;
+    private LightEffect lightEffect;
 
     private void Start()
     {
         uiManager=FindObjectOfType<UIManagerScript>();
         TrashHoleScript = FindObjectOfType<TrashHoleScript>();
+        lightEffect = FindObjectOfType<LightEffect>();
     }
 
     public void addInventory()
@@ -25,7 +27,7 @@ public class InventoryScript : MonoBehaviour
             uiManager.capacityWarning();
             uiManager.StationDropText();
             AudioManagerScript.instance.CapacityWarningSound(true);
-            
+            lightEffect.lightEco();
             return;
         }
         
