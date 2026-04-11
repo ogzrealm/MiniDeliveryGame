@@ -5,14 +5,29 @@ using UnityEngine.Rendering.Universal;
 public class LightEffect : MonoBehaviour
 {
     private Light2D _light2D;
+    private IEnumerator lightCoroutine;
 
     private void Start()
     {
         _light2D = GetComponent<Light2D>();
     }
-    public void lightEco()
+    public void StartLightEco()
     {
-        StartCoroutine(lightIntensity());
+        if (lightCoroutine == null)
+        {
+            lightCoroutine = lightIntensity();
+            StartCoroutine(lightCoroutine);
+        }
+    }
+
+    public void StopLightEco()
+    {
+        if (lightCoroutine != null)
+        {
+            StopCoroutine(lightCoroutine);
+            lightCoroutine = null;
+            _light2D.intensity = 0.5f;
+        }
     }
 
     private IEnumerator lightIntensity()

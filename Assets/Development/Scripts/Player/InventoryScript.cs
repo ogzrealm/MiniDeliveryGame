@@ -27,7 +27,7 @@ public class InventoryScript : MonoBehaviour
             uiManager.capacityWarning();
             uiManager.StationDropText();
             AudioManagerScript.instance.CapacityWarningSound(true);
-            lightEffect.lightEco();
+            lightEffect.StartLightEco();
             return;
         }
         
@@ -50,6 +50,7 @@ public class InventoryScript : MonoBehaviour
                 uiManager.silencecapacityWarning();
                 uiManager.StationDropTextFalse();
                 TrashHoleScript.HoleColorChange();
+                lightEffect.StopLightEco();
                 AudioManagerScript.instance.CapacityWarningSound(false);
                 isFullCapasity = false;
             }
