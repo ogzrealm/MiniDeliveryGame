@@ -1,11 +1,7 @@
-using System;
 using System.Collections;
 using TMPro;
-using TMPro.EditorUtilities;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class UIManagerScript : MonoBehaviour
 {
