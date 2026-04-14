@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using TMPro;
+using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UIManagerScript : MonoBehaviour
 {
@@ -15,7 +17,10 @@ public class UIManagerScript : MonoBehaviour
     [SerializeField] private RectTransform scoreTxtScale, timeTxtScale;
     public static UIManagerScript instance;
     [SerializeField] private TextMeshProUGUI dropHereText;
-    
+    [SerializeField] private TextMeshProUGUI finalScoreText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
+    [SerializeField] private  GameObject GameOverPanel;
+
 
     private void Awake()
     {
@@ -31,7 +36,9 @@ public class UIManagerScript : MonoBehaviour
     public void addtoTxtScore(int score)
     {
         scoreText.text = "Score: " + score.ToString();
+        finalScoreText.text = "Final Score: " + score.ToString();
         StartCoroutine(ScoreTextAnimation());
+        setHighScore(score);
     }
 
     public void addtoTxtInventory(int inventory)
@@ -133,5 +140,18 @@ public class UIManagerScript : MonoBehaviour
             dropHereText.gameObject.SetActive(true); 
         }
     }
+    
+
+    private void setHighScore(int score) 
+    {
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            highScore=score;
+        }
+        highScoreText.text = "High Score: " + highScore.ToString();
+    }
+
 }
 

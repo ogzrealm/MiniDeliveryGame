@@ -35,12 +35,12 @@ public class GameManagerScript : MonoBehaviour
         uiManager.addtoTxtTime(time);
         if (time <= 0)
         {
-            Debug.Log("Game Over");
             time = 0;
             Time.timeScale = 0;
             CarControlScript car=FindObjectOfType<CarControlScript>();
             car.ResetPitch();
             car.StopEngine();
+            GameOver();
         }
     }
 
@@ -50,7 +50,7 @@ public class GameManagerScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void GameOver()
+    private void GameOver()
     {
         if(Time.timeScale == 0)
         {
